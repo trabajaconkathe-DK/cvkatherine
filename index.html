@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deisy Katherine - Especialista en Atención al Cliente & Experiencia Kawaii</title>
+    <meta name="description" content="CV especializado para Maid Café - Experiencia en atención al cliente, servicio personalizado y creación de experiencias memorables">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --pink-primary: #ff85a2;
+            --pink-secondary: #ffb6c1;
+            --pink-light: #ffe4e9;
+            --pink-accent: #ff6b9d;
+            --purple-accent: #d4a5ff;
+            --text-dark: #5a3d5c;
+            --text-light: #8a6b8b;
+            --background: #fff9fb;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: linear-gradient(135deg, var(--pink-light), #fff0f5);
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .cv-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 10px 30px rgba(255, 133, 162, 0.15);
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            border: 3px solid var(--pink-light);
+        }
+
+        .header-decoration {
+            height: 10px;
+            background: linear-gradient(90deg, var(--pink-primary), var(--purple-accent), var(--pink-accent));
+        }
+
+        .header {
+            background: linear-gradient(135deg, #fff0f5, var(--pink-light));
+            padding: 30px 40px;
+            text-align: center;
+            position: relative;
+        }
+
+        .header::before {
+            content: "☕";
+            font-size: 40px;
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            opacity: 0.3;
+        }
+
+        .header::after {
+            content: "🌸";
+            font-size: 40px;
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            opacity: 0.3;
+        }
+
+        .name {
+            font-family: 'Poppins', sans-serif;
+            font-size: 32px;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .name::after {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 25%;
+            width: 50%;
+            height: 3px;
+            background: var(--pink-primary);
+            border-radius: 2px;
+        }
+
+        .title {
+            font-size: 20px;
+            font-weight: 500;
+            color: var(--pink-accent);
+            margin-bottom: 15px;
+        }
+
+        .tagline {
+            font-size: 16px;
+            color: var(--text-light);
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+            font-size: 15px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 15px;
+            background: white;
+            border-radius: 25px;
+            box-shadow: 0 3px 10px rgba(255, 133, 162, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-3px);
+        }
+
+        .contact-item i {
+            color: var(--pink-accent);
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            min-height: 500px;
+        }
+
+        .sidebar {
+            background: var(--background);
+            padding: 30px;
+            border-right: 2px dashed var(--pink-secondary);
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        .section {
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--pink-accent);
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--pink-light);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title i {
+            font-size: 16px;
+        }
+
+        .skills-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .skills-list li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+            font-size: 14px;
+        }
+
+        .skills-list li::before {
+            content: "🌸";
+            position: absolute;
+            left: 0;
+            color: var(--pink-accent);
+        }
+
+        .experience-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: var(--background);
+            border-radius: 12px;
+            border-left: 4px solid var(--pink-primary);
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 8px;
+        }
+
+        .item-title {
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 16px;
+        }
+
+        .item-date {
+            color: var(--pink-accent);
+            font-size: 13px;
+            background: var(--pink-light);
+            padding: 3px 10px;
+            border-radius: 15px;
+        }
+
+        .item-subtitle {
+            font-weight: 500;
+            color: var(--text-light);
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .item-description {
+            color: var(--text-light);
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        .kawaii-highlight {
+            background: linear-gradient(120deg, var(--pink-light) 0%, transparent 100%);
+            padding: 15px;
+            border-radius: 12px;
+            margin: 20px 0;
+            border: 2px dotted var(--pink-secondary);
+        }
+
+        .availability {
+            display: inline-block;
+            background: var(--pink-primary);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-weight: 600;
+            margin-top: 10px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .emoji-badge {
+            display: inline-block;
+            background: white;
+            border: 2px solid var(--pink-secondary);
+            border-radius: 20px;
+            padding: 5px 12px;
+            margin: 3px;
+            font-size: 12px;
+        }
+
+        .footer-note {
+            text-align: center;
+            padding: 20px;
+            background: var(--background);
+            border-top: 2px dashed var(--pink-secondary);
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .sidebar {
+                border-right: none;
+                border-bottom: 2px dashed var(--pink-secondary);
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+        }
+
+        .print-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--pink-primary);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 5px 15px rgba(255, 107, 157, 0.3);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .print-btn:hover {
+            background: var(--pink-accent);
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body>
+    <button class="print-btn" onclick="window.print()">
+        <i class="fas fa-print"></i> Imprimir CV
+    </button>
+
+    <div class="cv-container">
+        <div class="header-decoration"></div>
+        
+        <header class="header">
+            <h1 class="name">Deisy Katherine Martínez</h1>
+            <div class="title">Especialista en Atención al Cliente & Experiencia Kawaii</div>
+            <div class="tagline">Creando momentos memorables con calidez y atención al detalle ✨</div>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>trabajaconkathe@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+57 321 379 5430</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Bogotá, Colombia</span>
+                </div>
+            </div>
+            
+            <div class="availability">📍 Disponible para medio tiempo en Bogotá</div>
+        </header>
+        
+        <main class="main-content">
+            <aside class="sidebar">
+                <section class="section">
+                    <h2 class="section-title"><i class="fas fa-heart"></i> Perfil</h2>
+                    <p style="font-size: 14px; line-height: 1.6; color: var(--text-light);">
+                        Profesional con experiencia en atención al cliente y servicio personalizado. 
+                        Apasionada por crear experiencias positivas y memorables para cada cliente. 
+                        Habilidades en comunicación asertiva, resolución de situaciones y ambiente kawaii.
+                    </p>
+                </section>
+                
+                <section class="section">
+                    <h2 class="section-title"><i class="fas fa-star"></i> Habilidades Clave</h2>
+                    <ul class="skills-list">
+                        <li>Atención personalizada al cliente</li>
+                        <li>Comunicación cálida y asertiva</li>
+                        <li>Manejo de pedidos y caja</li>
+                        <li>Resolución de situaciones</li>
+                        <li>Ambiente kawaii y acogedor</li>
+                        <li>Trabajo en equipo colaborativo</li>
+                        <li>Creatividad en servicio</li>
+                        <li>Gestión de expectativas</li>
+                    </ul>
+                </section>
+                
+                <section class="section">
+                    <h2 class="section-title"><i class="fas fa-language"></i> Idiomas</h2>
+                    <div style="margin-top: 10px;">
+                        <span class="emoji-badge">🇪🇸 Español (Nativo)</span>
+                        <span class="emoji-badge">🇺🇸 Inglés (Básico)</span>
+                        <span class="emoji-badge">🇯🇵 Japonés (Fraseología básica)</span>
+                    </div>
+                </section>
+                
+                <section class="section">
+                    <h2 class="section-title"><i class="fas fa-clock"></i> Disponibilidad</h2>
+                    <ul class="skills-list">
+                        <li>Medio tiempo (4-6 horas diarias)</li>
+                        <li>Fines de semana incluidos</li>
+                        <li>Turnos mañana/tarde</li>
+                        <li>Inmediata incorporación</li>
+                    </ul>
+                </section>
+            </aside>
+            
+            <div class="content">
+                <div class="kawaii-highlight">
+                    <h3 style="color: var(--pink-accent); margin-bottom: 10px;">🌸 Mi enfoque para el Maid Café</h3>
+                    <p style="font-size: 14px; color: var(--text-light);">
+                        Entiendo que un Maid Café no es solo servicio, es crear una experiencia mágica. 
+                        Mi objetivo es combinar atención profesional con el encanto kawaii que hace 
+                        especial cada visita, manteniendo la autenticidad y calidez que los clientes buscan.
+                    </p>
+                </div>
+                
+                <section class="section">
+                    <h2 class="section-title"><i class="fas fa-briefcase"></i> Experiencia Relevante</h2>
+                    
+                    <article class="experience-item">
+                        <div class="item-header">
+                            <h3 class="item-title">Asesora de Ventas & Atención al Cliente</h3>
+                            <div class="item-date">Jun 2025 - Jul 2025</div>
+                        </div>
+                        <div class="item-subtitle">Consuerte del Meta | Vistahermosa</div>
+                        <div class="item-description">
+                            Atención personalizada a clientes, asesoramiento en servicios y manejo de caja. 
+                            Logré fidelizar clientes mediante servicio de calidad y comunicación efectiva.
+                        </div>
+                    </article>
+                    
+                    <article class="experience-item">
+                        <div class="item-header">
+                            <h3 class="item-title">Asistente Administrativa & Atención al Público</h3>
+                            <div class="item-date">2024 - 2025</div>
+                        </div>
+                        <div class="item-subtitle">ASOMUDEM - Asociación de Mujeres | Vistahermosa</div>
+                        <div class="item-description">
+                            Recepción y atención a público, coordinación de actividades y talleres. 
+                            Desarrollo de habilidades en comunicación y servicio personalizado.
+                        </div>
+                    </article>
+                    
+                    <article class="experience-item">
+                        <div class="item-header">
+                            <h3 class="item-title">Diseñadora Freelance & Emprendedora</h3>
+                            <div class="item-date">2025 - Actual</div>
+                        </div>
+                        <div class="item-subtitle">DeKora | Proyecto Personal</div>
+                        <div class="item-description">
+                            Creación de productos artesanales y atención directa a clientes. 
+                            Desarrollo de creatividad y sensibilidad estética aplicable a ambiente kawaii.
+                        </div>
+                    </article>
+                </section>
+                
+                <section class="section">
+                    <h2 class="section-title"><i class="fas fa-graduation-cap"></i> Formación</h2>
+                    
+                    <article class="experience-item">
+                        <div class="item-header">
+                            <h3 class="item-title">Técnica en Diseño e Integración de Multimedia</h3>
+                            <div class="item-date">2023</div>
+                        </div>
+                        <div class="item-subtitle">SENA - Servicio Nacional de Aprendizaje</div>
+                    </article>
+                    
+                    <article class="experience-item">
+                        <div class="item-header">
+                            <h3 class="item-title">Curso de Servicio al Cliente</h3>
+                            <div class="item-date">2024</div>
+                        </div>
+                        <div class="item-subtitle">SENA - Técnicas de atención y servicio</div>
+                    </article>
+                </section>
+                
+                <section class="section">
+                    <h2 class="section-title"><i class="fas fa-bolt"></i> Por qué sería una buena maid</h2>
+                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin-top: 15px;">
+                        <div style="background: var(--pink-light); padding: 15px; border-radius: 10px; text-align: center;">
+                            <div style="font-size: 24px; margin-bottom: 8px;">💖</div>
+                            <div style="font-size: 13px; font-weight: 500;">Actitud Positiva</div>
+                        </div>
+                        <div style="background: var(--pink-light); padding: 15px; border-radius: 10px; text-align: center;">
+                            <div style="font-size: 24px; margin-bottom: 8px;">🎨</div>
+                            <div style="font-size: 13px; font-weight: 500;">Creatividad</div>
+                        </div>
+                        <div style="background: var(--pink-light); padding: 15px; border-radius: 10px; text-align: center;">
+                            <div style="font-size: 24px; margin-bottom: 8px;">🤝</div>
+                            <div style="font-size: 13px; font-weight: 500;">Trabajo en Equipo</div>
+                        </div>
+                        <div style="background: var(--pink-light); padding: 15px; border-radius: 10px; text-align: center;">
+                            <div style="font-size: 24px; margin-bottom: 8px;">✨</div>
+                            <div style="font-size: 13px; font-weight: 500;">Detallista</div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+        
+        <footer class="footer-note">
+            <p>✨ Lista para aportar mi energía positiva y atención al detalle a su equipo ✨</p>
+            <p style="margin-top: 8px; font-size: 12px;">Disponible para entrevista inmediata en Bogotá</p>
+        </footer>
+    </div>
+
+    <script>
+        // Efectos interactivos suaves
+        document.querySelectorAll('.experience-item').forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateX(5px)';
+                this.style.transition = 'transform 0.3s ease';
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateX(0)';
+            });
+        });
+    </script>
+</body>
+</html>
