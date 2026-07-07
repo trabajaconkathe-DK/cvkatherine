@@ -3,163 +3,239 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hoja de Vida Profesional</title>
+    <title>Hoja de Vida - Deisy Katherine Martínez Chávez</title>
     <style>
-        body {
-            font-family: 'Arial', 'Helvetica', sans-serif;
-            color: #333333;
-            line-height: 1.5;
-            margin: 40px;
-            background-color: #ffffff;
-            font-size: 11pt;
+        /* CONFIGURACIÓN DE PÁGINA Y TIPOGRAFÍA */
+        @page {
+            size: letter;
+            margin: 15mm 20mm 15mm 20mm;
         }
-        .header-container {
+        body {
+            font-family: 'Calibri', 'Arial', sans-serif;
+            color: #2D3748;
+            line-height: 1.4;
+            margin: 0;
+            padding: 0;
+            font-size: 11pt;
+            background-color: #ffffff;
+        }
+
+        /* ENCABEZADO CON DISEÑO ATS-FRIENDLY */
+        .header {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            margin-bottom: 25px;
-            border-bottom: 2px solid #333333;
-            padding-bottom: 15px;
+            border-bottom: 2px solid #1A365D;
+            padding-bottom: 12px;
+            margin-bottom: 15px;
         }
-        .contact-info {
-            max-width: 70%;
+        .header-info {
+            max-width: 75%;
         }
         h1 {
-            font-size: 22pt;
-            margin: 0 0 5px 0;
-            color: #111111;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        .objective-title {
-            font-size: 13pt;
+            font-size: 20pt;
             font-weight: bold;
-            color: #555555;
-            margin: 0 0 10px 0;
+            color: #1A365D; /* Azul discreto corporativo */
+            margin: 0 0 4px 0;
+            letter-spacing: -0.5px;
         }
-        .details {
-            font-size: 11pt;
-            margin: 3px 0;
+        .subtitle {
+            font-size: 12pt;
+            font-weight: bold;
+            color: #4A5568;
+            margin-bottom: 8px;
+            text-transform: uppercase;
         }
-        .photo-placeholder {
-            width: 113px; /* Medida estándar tipo documento */
-            height: 151px;
-            border: 1px dashed #aaaaaa;
+        .contact-item {
+            margin: 2px 0;
+            font-size: 10.5pt;
+        }
+        .contact-item a {
+            color: #2D3748;
+            text-decoration: none;
+        }
+        
+        /* ESPACIO PARA FOTOGRAFÍA REGULADO */
+        .photo-box {
+            width: 3cm;
+            height: 4cm;
+            border: 1px solid #A0AEC0;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            font-size: 9pt;
-            color: #777777;
-            background-color: #fafafa;
+            font-size: 10pt;
+            color: #718096;
+            background-color: #F7FAFC;
         }
+
+        /* SECCIONES */
         h2 {
-            font-size: 14pt;
-            margin: 20px 0 10px 0;
-            color: #111111;
-            border-bottom: 1px solid #cccccc;
-            padding-bottom: 3px;
+            font-size: 13pt;
+            color: #1A365D;
+            border-bottom: 1px solid #E2E8F0;
+            margin: 16px 0 8px 0;
+            padding-bottom: 2px;
             text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
-        p.profile-text {
-            font-size: 11pt;
+        p {
+            margin: 0 0 10px 0;
             text-align: justify;
-            margin: 0 0 15px 0;
         }
-        .job-title {
+
+        /* EXPERIENCIA LABORAL Y EDUCACIÓN */
+        .experience-item {
+            margin-bottom: 12px;
+        }
+        .job-header {
+            display: flex;
+            justify-content: space-between;
             font-weight: bold;
-            font-size: 11.5pt;
-            margin: 10px 0 2px 0;
+            font-size: 11pt;
+            color: #1A365D;
         }
-        .job-company-date {
+        .company-date {
+            display: flex;
+            justify-content: space-between;
             font-style: italic;
-            color: #555555;
-            margin-bottom: 5px;
+            color: #4A5568;
+            font-size: 10.5pt;
+            margin-bottom: 4px;
         }
         ul {
-            margin: 0 0 15px 0;
-            padding-left: 20px;
+            margin: 0 0 8px 0;
+            padding-left: 18px;
         }
         li {
+            margin-bottom: 3px;
+            text-align: justify;
+        }
+
+        /* ENFOQUE DE COMPETENCIAS EN BLOQUE */
+        .skills-container {
+            margin-bottom: 5px;
+        }
+        .skills-group {
             margin-bottom: 4px;
-            font-size: 11pt;
         }
-        .grid-skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-bottom: 15px;
-        }
-        .grid-item {
-            font-size: 11pt;
-        }
-        .bold {
+        .bold-label {
             font-weight: bold;
+            color: #2D3748;
+        }
+
+        /* OPTIMIZACIÓN PARA IMPRESIÓN Y PDF */
+        @media print {
+            body {
+                background: #ffffff;
+                color: #000000;
+            }
+            .photo-box {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- ENCABEZADO Y CONTACTO -->
-    <div class="header-container">
-        <div class="contact-info">
-            <h1>[Tu Nombre Completo]</h1>
-            <div class="objective-title">[Cargo Objetivo o Área de Interés, ej: Auxiliar de Tienda / Atención al Cliente]</div>
-            <div class="details"><span class="bold">Teléfono:</span> [Tu Número]</div>
-            <div class="details"><span class="bold">Correo Electrónico:</span> [Tu Correo]</div>
-            <div class="details"><span class="bold">Ubicación:</span> [Ciudad, Barrio], Colombia</div>
-            <div class="details"><span class="bold">LinkedIn / Enlace:</span> [Opcional - Eliminar si no se tiene]</div>
+    <!-- ENCABEZADO Y DATOS PERSONALES -->
+    <div class="header">
+        <div class="header-info">
+            <h1>Deisy Katherine Martínez Chávez</h1>
+            <div class="subtitle">Auxiliar Operativa y de Servicio al Cliente</div>
+            <div class="contact-item"><span class="bold-label">Teléfono:</span> 3213795430</div>
+            <div class="contact-item"><span class="bold-label">Correo:</span> trabajaconkathe@gmail.com</div>
+            <div class="contact-item"><span class="bold-label">Ubicación:</span> Bogotá D.C., Colombia</div>
+            <div class="contact-item"><span class="bold-label">LinkedIn:</span> <a href="https://www.linkedin.com/in/trabajaconkathe/" target="_blank">linkedin.com/in/trabajaconkathe/</a></div>
+            <div class="contact-item"><span class="bold-label">Portafolio:</span> <a href="https://varonkenneth.github.io/repo-kate/index.html" target="_blank">varonkenneth.github.io/repo-kate/index.html</a></div>
         </div>
-        <!-- Espacio reservado para la fotografía (Esquina superior derecha) -->
-        <div class="photo-placeholder">
-            [ Espacio para Foto <br> Tipo Documento <br> Fondo Blanco ]
+        <!-- Recuadro para foto física -->
+        <div class="photo-box">
+            Fotografía
         </div>
     </div>
 
     <!-- PERFIL PROFESIONAL -->
     <h2>Perfil Profesional</h2>
-    <p class="profile-text">
-        Persona responsable, organizada y con alta disposición para el trabajo en equipo y el aprendizaje rápido. Cuenta con experiencia [o interés, si es primer empleo] en funciones de atención al cliente, apoyo operativo y organización de procesos. Enfocada en brindar un servicio amable, mantener el orden y adaptarme con facilidad a las necesidades del negocio para colaborar con el cumplimiento de los objetivos del equipo.
+    <p>
+        Persona responsable, organizada y con alta adaptabilidad para desempeñar funciones de apoyo operativo, atención al cliente y gestión de documentación. Cuenta con un compromiso sólido hacia el trabajo en equipo, puntualidad y el orden en entornos de oficina y comercio. Con actitud orientada al servicio, atención al detalle y un aprendizaje rápido que me permite incorporar nuevas herramientas de software y dinámicas de trabajo de manera oportuna y colaborativa.
     </p>
 
     <!-- EXPERIENCIA LABORAL -->
     <h2>Experiencia Laboral</h2>
 
-    <div class="job-title">[Nombre del Cargo Ocupado]</div>
-    <div class="job-company-date">[Nombre de la Empresa o Negocio] | [Mes Año Inicio] – [Mes Año Fin o "Actualidad"]</div>
-    <ul>
-        <li>Atendí de manera oportuna y amable a los clientes, resolviendo sus dudas y asegurando un servicio de calidad.</li>
-        <li>Organicé el inventario, la documentación y el área de trabajo para mantener un control óptimo de los procesos.</li>
-        <li>Apoyé en las labores operativas de registro y verificación asignadas por la supervisión directa.</li>
-        <li>Colaboré con el equipo de trabajo para garantizar el cumplimiento de las metas diarias del establecimiento.</li>
-    </ul>
+    <!-- Cargo 1 -->
+    <div class="experience-item">
+        <div class="job-header">Asistente Administrativa y de Operaciones</div>
+        <div class="company-date">ASOMUDEM <span>2024 – 2025</span></div>
+        <ul>
+            <li>Elaboré cartas, correspondencia y diversos documentos administrativos con atención al detalle.</li>
+            <li>Organicé el archivo documental de la organización tanto en formato físico como digital.</li>
+            <li>Gestioné el registro de información, la organización de reuniones y el seguimiento de procesos.</li>
+            <li>Controlé de manera exacta las ventas e inventarios utilizando Microsoft Excel para EmpoderArte.</li>
+            <li>Utilicé herramientas de inteligencia artificial para agilizar la redacción de documentos e incorporé el aprendizaje autónomo de Canva y Excel para optimizar las tareas diarias.</li>
+        </ul>
+    </div>
 
-    <!-- Duplicar este bloque si tienes más experiencia real. Si no, bórralo. -->
-    <div class="job-title">[Nombre del Segundo Cargo]</div>
-    <div class="job-company-date">[Nombre de la Empresa o Negocio] | [Mes Año Inicio] – [Mes Año Fin]</div>
-    <ul>
-        <li>Registré la información y el control de los productos/servicios asignados bajo altos estándares de responsabilidad.</li>
-        <li>Mantuve el orden del espacio físico y colaboré en la recepción de clientes o proveedores.</li>
-        <li>Realicé el seguimiento de tareas diarias asegurando la puntualidad en las entregas.</li>
-    </ul>
+    <!-- Cargo 2 -->
+    <div class="experience-item">
+        <div class="job-header">Administrative & Creative Operations Assistant</div>
+        <div class="company-date">BASADO <span>Enero 2026 – Mayo 2026</span></div>
+        <ul>
+            <li>Brindé apoyo administrativo y operativo coordinando actividades diarias y flujos de trabajo.</li>
+            <li>Coordiné y organicé cronogramas operativos junto con la logística de producción.</li>
+            <li>Atendí oportunamente consultas digitales asegurando una comunicación clara y un servicio de calidad.</li>
+            <li>Colaboré activamente en la planificación y organización de contenidos del equipo.</li>
+        </ul>
+    </div>
+
+    <!-- Cargo 3 -->
+    <div class="experience-item">
+        <div class="job-header">Asistente Administrativa</div>
+        <div class="company-date">Empresa Privada <span>2023 – 2024</span></div>
+        <ul>
+            <li>Elaboré actas, certificados, correspondencia y hojas de vida internas de la organización.</li>
+            <li>Mantuve el orden del espacio de trabajo y ejecuté la organización documental y el archivo general.</li>
+            <li>Apoyé los procesos de oficina empleando herramientas de inteligencia artificial para la redacción ágil de comunicaciones oficiales.</li>
+        </ul>
+    </div>
+
+    <!-- Cargo 4 -->
+    <div class="experience-item">
+        <div class="job-header">Fundadora - Gestión Operativa y Comercial</div>
+        <div class="company-date">DEKORA <span>2024 – Actualidad</span></div>
+        <ul>
+            <li>Atendí a los clientes de forma directa gestionando solicitudes, consultas y el procesamiento de pedidos.</li>
+            <li>Organicé la producción y distribución, supervisando los tiempos de entrega y la calidad de los productos.</li>
+            <li>Realicé tareas de diseño personalizado, branding, ilustración e investigación de referencias adaptadas a las necesidades comerciales, apoyándome en el uso de herramientas de IA.</li>
+        </ul>
+    </div>
 
     <!-- EDUCACIÓN -->
     <h2>Educación</h2>
-    <div class="details"><span class="bold">[Título Obtenido, ej: Bachiller Académico / Técnico en...]</span></div>
-    <div class="job-company-date">[Nombre de la Institución Educativa] | [Año de Graduación]</div>
+    <div class="experience-item">
+        <div class="job-header">Técnico en Diseño e Integración de Multimedia</div>
+        <div class="company-date">SENA <span>Graduación: 2023</span></div>
+    </div>
+    <div class="experience-item">
+        <div class="job-header">Bachiller Académica</div>
+        <div class="company-date">Institución Educativa Los Centauros <span>Graduación: 2023</span></div>
+    </div>
 
-    <!-- CURSOS RELEVANTES (Solo si aplican) -->
-    <h2>Cursos Relevantes</h2>
-    <ul>
-        <li>[Nombre del Curso o Certificación, ej: Manipulación de Alimentos / Servicio al Cliente] – [Institución, Año]</li>
-    </ul>
+    <!-- CURSOS RELEVANTES -->
+    <h2>Cursos y Formación Complementaria</h2>
+    <p>
+        Servicio al Cliente • Marketing • Marketing de Contenidos • Producción Audiovisual • Fotografía • Escritura Audiovisual • Ilustración Digital • Pensamiento Creativo • Promotora de Paz.
+    </p>
 
-    <!-- COMPETENCIAS, HERRAMIENTAS E IDIOMAS -->
+    <!-- HERRAMIENTAS Y COMPETENCIAS -->
     <h2>Competencias y Herramientas</h2>
-    <div class="grid-skills">
-        <div class="grid-item"><span class="bold">Competencias:</span> Atención al cliente, Trabajo en equipo, Adaptabilidad, Organización, Comunicación, Apoyo operativo.</div>
-        <div class="grid-item"><span class="bold">Herramientas:</span> [Mencionar software o herramientas reales, ej: Microsoft Excel básico, Sistemas POS, Manejo de Caja, o dejar vacío si no aplica].</div>
-        <div class="grid-item"><span class="bold">Idiomas:</span> Español (Nativo).</div>
+    <div class="skills-container">
+        <div class="skills-group"><span class="bold-label">Herramientas de Oficina:</span> Microsoft Word, Microsoft Excel, Google Docs, Google Sheets, Google Drive.</div>
+        <div class="skills-group"><span class="bold-label">Herramientas Operativas y de Diseño:</span> Canva, CapCut, Krita, Photoshop (básico), DaVinci Resolve (básico).</div>
+        <div class="skills-group"><span class="bold-label">Comunicación y Productividad:</span> Microsoft Teams, Zoom, ChatGPT, Gemini, GitHub (básico), HTML (básico).</div>
+        <div class="skills-group"><span class="bold-label">Idiomas:</span> Español (Nativo) • Inglés (Básico).</div>
     </div>
 
 </body>
